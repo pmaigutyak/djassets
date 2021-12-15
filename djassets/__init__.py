@@ -48,10 +48,6 @@ def setup_settings(settings, is_prod, **kwargs):
                 'output_filename': 'cache/{}.js'.format(key),
             }
 
-    settings['MIDDLEWARE'] += [
-        'pipeline.middleware.MinifyHTMLMiddleware'
-    ]
-
     settings.update({
         'STATICFILES_STORAGE': 'pipeline.storage.PipelineManifestStorage',
         'BOWER_INSTALLED_APPS': (
@@ -78,6 +74,10 @@ def setup_settings(settings, is_prod, **kwargs):
         'THUMBNAIL_QUALITY': 85,
         'FILE_UPLOAD_PERMISSIONS': 0o755
     })
+
+    settings['MIDDLEWARE'] += [
+        'pipeline.middleware.MinifyHTMLMiddleware'
+    ]
 
     extra_apps = [
         'djassets',
