@@ -52,8 +52,6 @@ def setup_settings(settings, is_prod, **kwargs):
         'pipeline.middleware.MinifyHTMLMiddleware'
     ]
 
-    print(extra_static_files)
-
     settings.update({
         'STATICFILES_STORAGE': 'pipeline.storage.PipelineManifestStorage',
         'BOWER_INSTALLED_APPS': (
