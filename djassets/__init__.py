@@ -107,6 +107,8 @@ def setup_settings(settings, is_prod, **kwargs):
         settings['MEDIA_ROOT'] = os.path.join(public_dir, 'media')
     else:
         settings['STATIC_ROOT'] = os.path.join(base_dir, 'static-collect')
+        settings['MEDIA_ROOT'] = os.path.join(base_dir, 'media')
+
 
 
 def _get_extra_static_files(static_apps):
