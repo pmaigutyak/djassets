@@ -80,6 +80,10 @@ def setup_settings(settings, is_prod, **kwargs):
         'pipeline.middleware.MinifyHTMLMiddleware'
     ]
 
+    for template in settings['TEMPLATES']:
+        template['OPTIONS']['context_processors'].append(
+            'djassets.context_processors.webp')
+
     extra_apps = [
         'djassets',
         'django.contrib.staticfiles',
