@@ -20,6 +20,11 @@ STATIC_APPS_MAP = {
         'css': BC + 'bootstrap/dist/css/bootstrap.css',
         'js': BC + 'bootstrap/dist/js/bootstrap.js'
     },
+    'bootstrap5': {
+        'bower': 'bootstrap',
+        'css': BC + 'bootstrap/dist/css/bootstrap.css',
+        'js': BC + 'bootstrap/dist/js/bootstrap.js'
+    },
     'jasny': {
         'bower': 'jasny-bootstrap#3.1.3',
         'css': BC + 'jasny-bootstrap/dist/css/jasny-bootstrap.css',
@@ -110,6 +115,20 @@ STATIC_APPS_MAP = {
             BC + 'slick-carousel/slick/slick-theme.css'
         ],
         'js': BC + 'slick-carousel/slick/slick.js'
+    },
+    'range-slider': {
+        'bower': 'seiyria-bootstrap-slider#11.0.2',
+        'css': [
+            BC + 'seiyria-bootstrap-slider/dist/css/bootstrap-slider.css'
+        ],
+        'js': [
+            BC + 'seiyria-bootstrap-slider/dist/bootstrap-slider.js',
+            'range-slider.js'
+        ]
+    },
+    'zoom': {
+        'bower': 'jquery-zoom#1.7.21',
+        'js': BC + 'jquery-zoom/jquery.zoom.js'
     },
     'basement': {
         'css': 'css/indents.css'
