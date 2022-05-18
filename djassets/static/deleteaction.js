@@ -3,16 +3,18 @@ DeleteAction = function (params) {
 
     var $container = params.$container,
         selector = params.selector,
-        onDelete = params.onDelete;
+        onDelete = params.onDelete,
+        method = params.method || 'POST';
 
     function handleDeleteClick() {
         var $btn = $(this);
 
         $btn.prop('disabled', true);
 
-        $.post(
-            $btn.data('url'),
-            function (response) {
+        $.ajax({
+            method: method,
+            url: $btn.data('url'),
+            success: function (response) {
                 onDelete($btn.data('item-id'), response);
 
                 $.notify({
@@ -20,13 +22,14 @@ DeleteAction = function (params) {
                 }, {
                     type: 'success'
                 });
+            },
+            error: function (response) {
+                $.notify({
+                    message: response.responseText
+                }, {
+                    type: 'danger'
+                });
             }
-        ).error(function (response) {
-            $.notify({
-                message: response.responseText
-            }, {
-                type: 'danger'
-            });
         });
     }
 

@@ -8,6 +8,11 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
         }
         return false;
     }
+
+    if (options.method === 'DELETE') {
+        jqXHR.setRequestHeader("X-CSRFToken", csrf);
+    }
+
     if (isPost(originalOptions.type) || isPost(options.type)) {
         if (typeof data === 'string' || data instanceof String) {
             data = $.deparam(data);

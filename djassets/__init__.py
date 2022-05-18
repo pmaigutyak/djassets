@@ -26,7 +26,7 @@ def setup_settings(settings, is_prod, **kwargs):
     }
 
     if 'CSS_COMPONENTS' in settings:
-        for key, filenames in settings.CSS_COMPONENTS.items():
+        for key, filenames in settings['CSS_COMPONENTS'].items():
             css_components[key] = {
                 'source_filenames': filenames,
                 'output_filename': 'cache/{}.css'.format(key),
@@ -43,7 +43,7 @@ def setup_settings(settings, is_prod, **kwargs):
     }
 
     if 'JS_COMPONENTS' in settings:
-        for key, filenames in settings.JS_COMPONENTS.items():
+        for key, filenames in settings['JS_COMPONENTS'].items():
             js_components[key] = {
                 'source_filenames': filenames,
                 'output_filename': 'cache/{}.js'.format(key),

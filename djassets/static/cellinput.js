@@ -6,11 +6,14 @@ CellInput = function (params) {
         onSuccess = params.onSuccess;
 
     function handleInputChange() {
-        var $input = $(this);
+        var $input = $(this),
+            data = {};
+
+        data[$input.attr('name')] = $input.val();
 
         $input.blur();
 
-        $.post($input.data('url'), {value: $input.val()})
+        $.post($input.data('url'), data)
             .done(handleSaveSuccess)
             .error(handleSaveError);
     }
