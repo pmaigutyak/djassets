@@ -9,6 +9,7 @@ Modal = function (params) {
         onCancel = params.onCancel,
         contentGetter = params.contentGetter,
         focusOn = params.focusOn,
+        traditional = params.traditional || false,
         url = params.url || $target.data('url');
 
     if (!contentGetter) {
@@ -38,6 +39,7 @@ Modal = function (params) {
                     url: url,
                     success: handleFormSubmitSuccess,
                     error: handleFormSubmitError,
+                    traditional: traditional,
                     complete: function () {
                         toggleSubmitBtn(true);
                     }
