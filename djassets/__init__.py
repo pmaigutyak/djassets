@@ -1,6 +1,5 @@
 
 import os
-from pathlib import Path
 
 from django.apps import AppConfig
 from django.conf import global_settings
@@ -105,7 +104,7 @@ def setup_settings(settings, is_prod, **kwargs):
         if not domain:
             raise ValueError('Please add `DOMAIN` to settings')
 
-        public_dir = os.path.join(Path.home(), 'sites', domain, 'public')
+        public_dir = os.path.join('/home/dev', 'sites', domain, 'public')
 
         settings['STATIC_ROOT'] = os.path.join(public_dir, 'static')
         settings['MEDIA_ROOT'] = os.path.join(public_dir, 'media')
