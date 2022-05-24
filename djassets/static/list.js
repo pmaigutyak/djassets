@@ -7,6 +7,7 @@ List = function (params) {
         xhr = null;
 
     function reload() {
+        nextPageUrl = url;
         clearItems();
         loadMore();
     }
